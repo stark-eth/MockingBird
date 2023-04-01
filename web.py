@@ -13,7 +13,7 @@ def launch(port: int = typer.Option(2023, "--port", "-p")) -> None:
     The UI is auto-generated from the input- and output-schema of the given function.
     """
     # Setup a tunnel to the streamlit port 2023
-
+    ngrok.kill()
     public_url = ngrok.connect(2023)
     print(public_url)
     # Add the current working directory to the sys path
